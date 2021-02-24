@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    overflow-x:hidden;
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #EEEEEE;
+    z-index: -5;
+}
+.main-wrapper{
+    width: 100%;
+    display: flex;
+}
+
+/* ---------Side Pannel------------- */
+.sidePannel{
+    width: 260px;
+    height: 100vh;
+    background:url('img/sidebar1.jpg');
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    padding: 10px;
+    position: fixed;
+}
+.logo{
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 10px;
+    font-weight: 100;
+    color: rgb(94, 93, 91);
+    border-bottom: 1px solid rgb(158, 154, 154);
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.button-container{
+    margin-top: 40px;
+    width: 100%;
+}
+.button-container li{
+    list-style: none;
+    margin-top: 40px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.button-container a{
+    color: gray;
+    text-decoration: none;
+}
+.active a{
+    color: white;
+    background-color:  #0EB6CB;
+    padding: 15px 30px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 7px rgba(41, 41, 41, 0.568);
+    text-align: center;
+}
+.button-container p{
+    margin-left: 10px;
+    display: inline;
+}
+.icon{
+    width: 15px;
+}
+
+
+/* ----------Main box--------------- */
+.main{
+    margin-left: 260px;
+    width: 100%;
+    height: 100%;
+    background-color:#EEEEEE;
+    padding: 15px;
+}
+.main-header{
+    color: rgb(114, 111, 111);
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid gray;
+}
+.main-header p{
+    line-height: 50px;
+    display: inline;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    margin-left: 30px;
+
+}
+.header-btns{
+    float: right;
+}
+.main-header button{
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 18px;
+}
+#create-report-btn{
+    display: inline-block;
+    background-color: rgb(13, 148, 172);
+    padding: 13px;
+    margin-right: 10px;
+    letter-spacing: 3px;
+    border-bottom: 1px solid black;
+    color: white;
+    cursor: grab;
+}
+/* ------- Content box----- */
+.content-container{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+.card{
+    background-color:whitesmoke;
+    width: 80%;
+    margin-top: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.56);
+    border-radius: 5px;
+    padding: 0px 15px 10px 15px;
+
+}
+.card-head{
+    color: white;
+    height: 60px;
+    background-color: #2790aa;
+    border-radius: 5px;
+    box-shadow: 0px 1px 8px rgba(82, 80, 80, 0.56);
+    font-size: 40px;
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+
+thead{
+    color: rgb(248, 70, 0);
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
+table,th, td{
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-collapse: collapse;
+    padding: 15px 10px;
+}
+form{
+    margin-top: 10px;
+}
+form input{
+    width: 75%;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+form button{
+    font-size: 20px;
+    padding: 3px 5px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    color: white;
+    border: 1px solid black;
+}
+form input:focus{
+    outline:1px solid green;
+}
+form button:focus{
+    outline:1px solid black;
+}
+
+
+.form-container{
+    background-color: rgb(247, 247, 247);
+    padding: 20px 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    margin-top: 50px;
+}
+.inp{
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    background-color: transparent;
+    margin: 10px 5px 0px 5px;
+    padding: 5px;
+    outline: none;
+    transition: .5s;
+}
+.inp:focus{
+    border-bottom:3px solid green ;
+}
+#inp-container select{
+    padding: 2px;
+    font-size: 18px;
+}
+.btn-container{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.btn-container button{
+    font-size: 20px;
+    letter-spacing: 3px;
+    background-color: rgb(6, 196, 6);
+    color: white;
+    border: none;
+    font-weight: bolder;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: .5s;
+}
+#add-clmn-btn{
+    background-color: rgb(10, 194, 240);
+    font-weight: lighter;
+    letter-spacing: normal;
+    outline: none;
+}
+.btn-container button:hover{
+    padding: 10px 20px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5);
+}
+.del-btn{
+  font-size: 20px;
+  letter-spacing: 3px;
+  background-color: #F12E2E;
+  color: white;
+  border: 1px solid black;
+  font-weight: bolder;
+  padding: 5px;
+}

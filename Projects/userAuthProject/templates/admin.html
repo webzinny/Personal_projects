@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static "css/admin.css"%}">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="main-wrapper">
+        <div class="sidePannel">
+            <div class="logo">
+                Atul
+            </div>
+
+            <div class="button-container">
+                <ul>
+                    <li class="active"><a href="#"><img class="icon"  src="{%static "css/img/dashboard.svg"%}" ><P>Dashboard</P></a></li>
+                    <li ><a href="/adm/createClient"><img  class="icon" src="{%static "css/img/hand-shake.svg"%}" ><P>Create Client</P></a></li>
+                    <li><a href="/adm/createUser"><img class="icon" src="{%static "css/img/user.svg"%}"  ><P> Create User</P></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-header">
+                <p>Dashboard</p>
+                <button onclick="log()" type="submit">LogOut</button>
+                <script>
+                  function log(){
+                    window.location.assign('/adm/log');
+                  }
+                </script>
+            </div>
+
+            <div class="content-container">
+                <div class="card user" style="width:70%">
+                    <div class="card-head">
+                        User
+                    </div>
+                    <div class="card-content">
+                        <table style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>S.no</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th >Reports</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {%for user in userData%}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td ><a href="/adm/editUser/{{user.id}}">{{user.name}}</a></td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.pas}}</td>
+                                    <td>{{user.rep}}</td>
+                                    <td>{%if user.status%}
+                                      <div class="status-active"></div>
+                                      {%else%}
+                                      <div class="status-inactive"></div>
+                                      {%endif%}
+                                    </td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+    <!--   ------------ CLients ------------------- -->
+                <div class="card" style="width:27%">
+                    <div class="card-head" style="background-color:#4da851">
+                        Clients
+                    </div>
+                    <div class="card-content">
+                        <table style="width: 100%;">
+                            <thead style="color: #4da851;">
+                                <tr>
+                                    <th>S.no</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {%for client in clientData%}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td><a href="/adm/reports/{{client.id}}">{{client.name}}</td>
+                                </tr>
+                              {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ending here -->
+</body>
+</html>

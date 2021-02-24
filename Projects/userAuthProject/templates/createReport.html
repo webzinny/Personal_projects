@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static "css/report.css"%}">
+    <title>Client</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="main-wrapper">
+        <div class="sidePannel">
+            <div class="logo">
+                Atul
+            </div>
+
+            <div class="button-container">
+                <ul>
+                  <li ><a href="/adm"><img class="icon"  src="{%static "css/img/dashboard.svg"%}" ><P>Dashboard</P></a></li>
+                  <li ><a href="/adm/createClient"><img  class="icon" src="{%static "css/img/hand-shake.svg"%}" ><P>Create Client</P></a></li>
+                  <li ><a href="/adm/createUser"><img class="icon" src="{%static "css/img/user.svg"%}"  ><P> Create User</P></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-header">
+                <p>Dashboard</p>
+                <div class="header-btns" onclick="makeFormVisible()">
+                    <div id="create-report-btn">
+                        Create new report
+                    </div>
+                    <button onclick="log()" type="submit">LogOut</button>
+                    <script>
+                      function log(){
+                        window.location.assign('/adm/log');
+                      }
+                    </script>
+                </div>
+            </div>
+
+            <div class="content-container">
+                <div class="card-head">
+                    {{cl.name}}
+                </div>
+                <div class="card" id="report-form" style="display: none;">
+                      <form  action="" method="post" autocomplete="off">
+                      {%csrf_token%}
+                        <input type="text" name="repName" placeholder="Enter report Name">
+                        <button style="background-color:rgb(30, 180, 30);" type="submit">Create</button>
+                        <button onclick="makeformUnvisible()" style="background-color: rgb(241, 46, 46);" type="button">Cancel</button>
+                        <div class="form-container">
+                                <div id="inp-wrapper">
+                                    <div id="inp-container">
+                                        <input name="clmnNames" class="inp" type="text" placeholder="Enter Column name" required>
+                                    </div>
+                                </div>
+                                <div class="btn-container">
+                                    <button id="add-clmn-btn" onclick="addClmn()"  type="button">Add column</button>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- -----------Report Table------- -->
+                <div class="card">
+                    <table style="width: 100%;text-align: left;">
+                        <thead>
+                            <tr><th>S.no</th>
+                                <th>Report Name</th>
+                                <th>Date</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                          {%for rep in data%}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td><a href="/adm/reports/view/{{rep.id}}">{{rep.name}}</a></td>
+                                <td>{{rep.date}}</td>
+                                <td><a href="/adm/delReport/{{rep.id}}"> <button class="del-btn" type="button">Delete</button> </a> </td>
+                            </tr>
+                          {%endfor%}
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ending here -->
+    <script>
+      function makeFormVisible(){
+        document.getElementById("report-form").style="display:block";
+      }
+      function makeformUnvisible(){
+        document.getElementById("report-form").style="display:none";
+      }
+    </script>
+    <script >
+        const inpElement = document.getElementById("inp-container").cloneNode(true);
+        var form = document.getElementById("inp-wrapper")
+        function addClmn(){
+        let copy = inpElement.cloneNode(true);
+        form.append(copy);
+    }
+    </script>
+</body>
+</html>

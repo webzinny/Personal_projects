@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{%static "css/login.css"%}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+    <div class="main" style="display:none">
+      MADHYA
+    </div>
+    <div class="wrapper">
+    	<div class="container">
+        {%if msg%}
+    		<h1>{{msg}}</h1>
+        {%else%}
+        <h1>Welcome</h1>
+        {%endif%}
+
+    		<form class="form" method="post" action="/validate">
+          {%csrf_token%}
+    			<input name="email" type="email" placeholder="Email" required>
+    			<input name="pas" type="password" placeholder="Password" required>
+    			<button type="submit" id="login-button">Login</button>
+    		</form>
+    	</div>
+    	<ul class="bg-bubbles">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    </div>
+<!-- partial -->
+</body>
+</html>

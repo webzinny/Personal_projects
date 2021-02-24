@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Panel</title>
+    <link rel="stylesheet" href="{% static "css/DiscussionPanel.css" %}">
+    <script>
+        $(function() {
+        $(".toggle").on("click", function() {
+            if ($(".item").hasClass("active")) {
+                $(".item").removeClass("active");
+            } else {
+                $(".item").addClass("active");
+            }
+        });
+    });
+        </script>
+
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="#">Virtual School</a></li>
+                <li class="item"><a href="{%url "student"%}">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+ <!chat container>
+ <div class="chatbox">
+     <h3 class="groupname">Discuss here</h3>
+     <div class="chatarea">
+       {% for i in key %}
+        {%if i.person_id == st_id %}
+            <div class="container dark">
+                <label>{{i.name}}</label>
+                <p>{{i.message}}</p>
+                <span class="time-right">{{i.date}}</span>
+              </div>
+              {%else%}
+            <div class="container light">
+                <label>{{i.name}}</label>
+              <p>{{i.message}}</p>
+              <span class="time-left">{{i.date}}</span>
+            </div>
+            {%endif%}
+            {%endfor%}
+    </div>
+ </div>
+        <form class="msger-inputarea"  method="post">
+          {% csrf_token %}
+            <input type="text" name="message" class="msger-input" placeholder="Enter your message...">
+            <button type="submit" class="msger-send-btn">Send</button>
+        </form>
+
+
+</body>
+</html>

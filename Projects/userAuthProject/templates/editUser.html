@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{%static "css/editUser.css"%}">
+    <title>Edit User</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="main-wrapper">
+        <div class="sidePannel">
+            <div class="logo">
+                Atul
+            </div>
+
+            <div class="button-container">
+                <ul>
+                  <li ><a href="/adm"><img class="icon"  src="{%static "css/img/dashboard.svg"%}" ><P>Dashboard</P></a></li>
+                  <li ><a href="/adm/createClient"><img  class="icon" src="{%static "css/img/hand-shake.svg"%}" ><P>Create Client</P></a></li>
+                  <li ><a href="/adm/createUser"><img class="icon" src="{%static "css/img/user.svg"%}"  ><P> Create User</P></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-header">
+                <p>Dashboard</p>
+                <button onclick="log()" type="submit">LogOut</button>
+                <script>
+                  function log(){
+                    window.location.assign('/adm/log');
+                  }
+                </script>
+            </div>
+
+            <div class="content-container">
+                <div class="card user">
+                    <div class="card-head">
+                        Edit
+                    </div>
+                    <div class="form-content">
+                        <form autocomplete="off" method="post">
+                          {%csrf_token%}
+                            <input  class="inp" type="text" name="userName"  value="{{user.name}}" required><br>
+                            <input class="inp" type="email" name="userEmail" value="{{user.email}}"  required><br>
+                            <input class="inp" type="text" name="pass" value="{{user.pas}}"  required><br>
+                            {%if user.status%}
+                              <label id="status-label" for="status">Status</label><input type="checkbox" id="status" name="status" checked><br>
+                            {%else%}
+                              <label id="status-label" for="status">Status</label><input type="checkbox" id="status" name="status"><br>
+                            {%endif%}
+                            <label for="report">Select reports</label>
+                              <select class="" name="rep-select" id="report" multiple>
+                                {%for i in rep%}
+                                <option value="{{i.id}}">{{i.name}}</option>
+                                {%endfor%}
+                              </select><br>
+                            <input id="del" style="display:none"  name="state" value="">
+                            <button onclick="lol()" id="del-btn" type="submit">Delete</button> <button onclick="save()" type="submit">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ending here -->
+    <script>
+      function save(){
+        document.getElementById('del').value="no";
+      }
+      function lol(){
+        document.getElementById('del').value="yes";
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Home Work</title>
+    <link rel="stylesheet" href="{% static "css/addhomework.css" %}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a style="color:white;" href="#">Virtual School</a></li>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+    <div   class="container">
+
+        <h1><strong>Adding HomeWork</strong></h1>
+ <form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="subject">
+            <label style="float: left">Choose a Subject :</label>
+            <select name="subject">
+                <option name="subject" value="English">English</option>
+                <option name="subject" value="Hindi">Hindi</option>
+                <option name="subject" value="Math">Maths</option>
+                <option name="subject" value="Science">Science</option>
+                <option name="subject" value="Social Science">Social Science</option>
+            </select>
+        </div>
+
+        <div class="upload-file" >
+
+          <input type="file" accept="application/pdf,image/jpeg" name="file" id="images" required="required"  multiple="multiple" class="choosefile" >
+          <div class="file-dummy">
+
+              <div class="default" style="font-size: 12px; padding-left: 9px; ">Please select some files</div>
+          </div>
+        </div>
+
+        <div class="upload-img">
+            <button type="submit" style="margin: 9px;margin-right: 105px;padding: 3px;" class="submit">Upload</button>
+        </div>
+</form>
+
+
+
+        </div>
+
+
+
+
+
+
+      <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+</body>
+</html>

@@ -1,0 +1,299 @@
+
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: sans-serif;
+    background: rgb(212, 210, 210);
+  }
+  nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+    font-size: 20px;
+  }
+  .button.secondary {
+    border-bottom: 1px #444 solid;
+  }
+
+  /* Mobile menu */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+
+  /* Navbar Toggle */
+  .toggle {
+    cursor:pointer;
+  }
+  .bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  .bars:before,
+  .bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .bars:before {
+    top: 5px;
+  }
+  .bars:after {
+    top: -5px;
+  }
+
+  /* Tablet menu */
+  @media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+        border-radius:50em;
+    }
+    .button.secondary a {
+        background: transparent;
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition:all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    }
+  }
+
+
+  @media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+  }
+  .ph-btn,.sph-btn{
+            box-shadow: 5px 5px 5px black;
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            background: linear-gradient(180deg, black, #2e002e);
+            color: white;
+    }
+
+ button:hover, button:focus{
+    background: rgba(187, 178, 178, 0.788);
+    color: rgb(0, 0, 0);
+
+}
+
+.container{
+    padding: 20px;
+}
+.container1{
+    padding: 40px;
+    padding-top: 0;
+}
+.container-2{
+  margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(176deg, black, #53004e);
+    border: 1px solid rgba(99, 94, 94, 0.76);
+    padding: 5px;
+
+
+}
+.mini-container{
+    display: block;
+    width: 100px;
+    height: 130px;
+    float: left;
+    background: #f6dfff;
+    margin-left: 20px;
+    box-shadow: 5px 5px 3px 3px black;
+    margin-top: 20px;
+    border: 1.3px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+.name-container{
+ width: 100%;
+    height: 30px;
+    background: rgba(43, 0, 57, 0.822);
+    line-height: 30px;
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+        box-shadow: inset 8px 3px black;
+}
+
+
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+.date{
+    color: white;
+    margin: 5px;
+}
+.ph-container{
+   width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 68px;
+  background: linear-gradient(172deg, black, blue);
+  color: white;
+  border: 2px solid black;
+  font-size: 1.1rem;
+  padding-top: 30px;
+}
+.ph-container .ph-form{
+    margin: 10px;
+
+    padding: 0px;
+    line-height: 25px;
+
+}
+#Choose-subject {
+    width: 84px;
+    height: 30px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #e93535, #edaa15);
+    border: 1.3px solid powderblue;
+    box-shadow: -2px 2px 5px 1px black;
+    padding: 5px;
+    margin: 5px;
+  }
+
+#images{
+margin-top: 0px;
+
+width: 200px;
+height: auto;
+background: transparent;
+}
+.ph-form-group button{
+   margin-top: 20px;
+  width: 130px;
+  height: 35px;
+  background: yellow;
+  border-radius: 5px;
+  background: linear-gradient(45deg, black, #030384);
+  border: 1px solid black;
+  box-shadow: inset -3px -2px #030a7c;
+  color: #ee4810;
+}
+
+.ph-form-group button:hover,.ph-form-group button:focus{
+margin-top: 20px;
+width: 140px;
+height: 38px;
+font-size: 1rem;
+background: white;
+border-radius: 8px;
+border: 2px solid black;}
+
+#choose{
+  height: 120px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <body>
+    <form >
+      <input id="name" type="email" name="email" value="">
+      <input id="pas" type="password" name="pas" value="">
+      <button type="button" onclick="validate()">submit</button>
+    </form>
+
+    <script>
+      function validate(){
+        var name = document.getElementById("name").value;
+        var pas = document.getElementById("pas").value;
+        fetch('http://localhost:8000/validate?email='+name+'&pas='+pas+'').then((resp)=>resp.json()).then((data)=>console.log(data));
+      }
+
+    </script>
+  </body>
+</html>

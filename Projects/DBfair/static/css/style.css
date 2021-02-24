@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+}
+nav ul{
+    text-decoration: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    list-style-type: none;
+    position: relative;
+    top:20px;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+    padding: 10px 20px;
+}
+nav a:hover{
+  background-color: rgba(200,200, 200, 1);
+  transform: skewY(-5px);
+}
+
+
+/*        Content start here          */
+.start-content{
+    height: 150vh;
+    background: url(https://stage.dblifestylefair.com/public/frontend/assets/images/fashion_bg.jpeg) no-repeat;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+.logo-container{
+    height: 35%;
+    width: 50%;
+    background-color: rgba(226, 226, 226, 0.418);
+    position: relative;
+    top:130px;
+}
+.logo{
+    background: url(https://stage.dblifestylefair.com/public/frontend/assets/images/lifestyle-2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-color:r rgba(98, 102, 98, 0.541);
+}
+.category{
+    position: absolute;
+    margin-left: 10%;
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    top: 600px;
+    z-index: 1;
+    box-shadow: 0px 1px 15px rgba(0,0,0,.4);
+    padding-bottom: 40px;
+}
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card{
+    margin: 15px;
+    padding: 20px;
+    width: 25%;
+    height: 400px;
+    box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.5);
+    position: relative;
+    top: 40px;
+    transition: 1s;
+}
+.card:hover{
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.card p{
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*       choose by store            */
+.choose-store{
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#copyright{
+    margin-top: 10px;
+    font-weight: 800;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+/* total visitor */
+.total-visitor{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    background-color: sandybrown;
+    align-items: center;
+}
+.total-visitor p{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/*             experiment               */
+.experiment{
+    height: 200vh;
+    background-color: sandybrown;
+}

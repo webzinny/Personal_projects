@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static "css/userView.css"%}">
+    <title>Madhya events</title>
+</head>
+<body>
+    <header>
+        MADHYA Events
+        <button type="button" onclick="window.location.assign('user/logout')" name="button">LogOut</button>
+    </header>
+
+    <div class="main-wrapper">
+      <h1 >Welcome {{userData.name}}</h1>
+        <div class="card">
+            <div class="card-head">
+                Reports
+            </div>
+            <table style="width: 100%;text-align: left;">
+                <thead>
+                    <tr><th>S.no</th>
+                      <th>Client</th>
+                        <th>Report Name</th>
+                        <th>View Submission</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  {%for i in repData%}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.client}}</td>
+                        <td><a href="/user/form/{{i.id}}">{{i.name}}</a></td>
+                        <td><a href="/user/repView/{{i.id}}"><button style="padding:3px;" type="button" name="button">View Entry's</button></a> </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+
+            </table>
+    </div>
+</html>

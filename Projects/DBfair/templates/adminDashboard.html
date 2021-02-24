@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{%static "js/jquery.js"%}"></script>
+    <script src="{%static "js/adminDashboard.js"%}"></script>
+    <link rel="stylesheet" href="{%static "css/adminDashboard.css"%}">
+    <title>Admin pannel</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">LOGO</div>
+            <div id="content">content
+            </div>
+            <a href="{%url "adminLogOut"%}">
+              <button style="padding:5px;font-size:18px;" type="button" name="logout">Log Out</button>
+            </a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <button id="dashboard-btn" class="active" ><a href="#">Dashboard</a></button>
+            <button id="pushcontents-btn"><a href="#">Push contents</a></button>
+            <button id=""><a href="#">Play game</a></button>
+            <button id=""><a href="#">small admin</a></button>
+        </div>
+        <div class="mainframe">
+            <div  id="dashboard">
+                <h1>Welcome to the Admin interface</h1>
+            </div>
+            <div id="pushcontents">
+              <button style="margin:20px;padding:10px;font-size:20px;" id="add-new-card" type="button" name="add-new-card">Add new card</button><br>
+              <form style="display:none;" id="content-upload-form" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                <input type="text" required name="tag" value="" placeholder="Please input the tag">
+                <input type="text" name="description" value="" placeholder="Enter description">
+                <input type="file" name="img" value="" required>
+                <button type="submit" name="button">Click to upload</button>
+              </form>
+              <table id="content-table">
+                <tr>
+                  <th>Id</th>
+                  <th>Image</th>
+                  <th>Tag</th>
+                  <th>Description</th>
+                  <th>Action</th>
+                </tr>
+              </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

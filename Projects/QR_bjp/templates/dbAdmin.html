@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static "dbAdmin.css"%}">
+    <title>DB Admin</title>
+</head>
+<body>
+  {%if msg%}
+  <h1 style="color:white;margin:20px">{{msg}}</h1>
+  {%endif%}
+
+    <button type="button" onclick="formShow()" >Click to empty the DB</button>
+
+    <div id="form-container" style="display: none">
+        <form method="post">
+          {%csrf_token%}
+            <input type="password" name="pas" placeholder="Password" ><br>
+            <button type="submit">Proceed</button><br>
+            <button type="button" onclick="hideForm()" style="background-color: rgb(255, 0, 0);color: white;" >Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        function formShow(){
+            document.getElementById("form-container").style.display="flex";
+        }
+        function hideForm(){
+            document.getElementById("form-container").style.display="none";
+        }
+    </script>
+
+</body>
+</html>

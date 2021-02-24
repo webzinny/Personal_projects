@@ -1,0 +1,116 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+        <!--jQuery library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!--Latest compiled and minified JavaScript-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Soul Of Ace's</title>
+    <link rel="stylesheet" href="{% static "css/studentUi.css" %}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="#">Virtual School</a></li>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">About</a></li>
+            <li class="item"><a href="#">Services</a></li>
+            <li class="item"><form > <button type="submit" class="btn btn-primary" value="logout" name="log">LogOut</button></form> </li>
+            <li class="toggle"><span class="bars"></span></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="fancy">
+
+            {%for i in key%}
+          <li>  {{i.notice_msg}}--{{i.date}} </li>
+            {%endfor%}
+
+        </div>
+
+
+
+    </main>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% url "student/homework" %}"   class="thumbnail"><img src="{% static "images/homework.jpg" %}">
+                        <div class="caption">
+                             <h2>Home Work</h2>
+                            <p>Submit your homework here</p>
+                        </div></a>
+                </div>
+                   <div class="col-sm-4">
+                    <a href="{% url "student/notes" %}"   class="thumbnail"><img src="{% static "images/notes.jpg" %}">
+                    <div class="caption">
+                               <h2>Notes</h2>
+                          <p>Read Notes</p>
+                        </div></a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% url "student/notebook" %}" class="thumbnail"><img src="{% static "images/digitalnotebook.jpg" %}">
+                        <div class="caption">
+                             <h2>Digital Notebook</h2>
+                            <p>Write your notes here</p>
+                        </div></a>
+
+                </div>
+
+
+            </div>
+             <div class="row">
+                  <div class="col-sm-4">
+                    <a href="{% url "student/lectures" %}" class="thumbnail"><img src="{% static "images/videolectures.jpg" %}">
+                        <div class="caption">
+                             <h2>Lectures</h2>
+                            <p>Learn from online/offline classes</p>
+                        </div></a>
+
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% url "discussionpanel" %}"   class="thumbnail"><img src="{% static "images/discussionpanel.jpg" %}">
+                        <div class="caption">
+                             <h2>Discussion Panel</h2>
+                            <p>Discuss with your fellomates</p>
+                        </div></a>
+                </div>
+                   <div class="col-sm-4">
+                    <a href="{% url "student/event" %}" class="thumbnail"><img src="{% static "images/syllabus.jpg" %}">
+                    <div class="caption">
+                               <h2>Syllabus/Report/Info</h2>
+                          <p>Find your syllabus,report and Info</p>
+                        </div></a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+</body>
+</html>

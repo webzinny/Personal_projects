@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Wardrobe AT HOME</TITLE>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+         <link rel="stylesheet" href="yourpath/magic.css">
+         
+        <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+       
+        .navbar-brand{
+            float: left;
+            /* margin-top: 0; */
+            height: 150px;
+            padding: 2px 3px;
+            font-size: 18px;
+            margin: 7px;
+            transition:transform 2s ;
+
+        }
+        .navbar-brand:hover{
+            transform: rotateY(180deg);
+        }
+        .navbar{
+             background: url("https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg");
+            background-repeat: repeat;
+            border:none;
+            color:purple;
+        }
+        
+        .navbar-inverse .navbar-nav>li>a {
+                color: #d10202;
+                padding: 8px;
+                font-weight: bolder;
+                font-size: 16px;
+                font-family: cursive;
+                text-shadow: 0px 1px 80px black, 1px 1px black, 0px 1px 50px darkred;
+                /* letter-spacing: 1px; */
+                margin: 50px 5px 10px 1px;
+            }
+            .navbar-inverse .navbar-nav>li>a:hover{
+                box-shadow: 3px 3px 7px 1px #970101 ;
+                border-radius: 10px;
+                text-shadow: 0px 1px black;
+                color: #d10202;
+                background: white;
+            }
+            .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+                    color: #fff;
+                    background-color: #610000;
+                    border-radius: 10px;
+                }
+            .navbar-inverse .navbar-toggle {
+                border-color: #333;
+                background: #452527;
+            }
+
+
+            /* collection navbar */
+            
+            .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+                color: #fff;
+                background-color: #5a0d2a;
+                font-family: cursive;
+                font-weight: 800;
+                font-size: 15px;
+                border-radius: 10px;
+                box-shadow: 2px 3px 6px #980039;
+            }
+            .nav-pills>li>a {
+                border-radius: 4px;
+                color: #5a0d2a;
+                /* font-size: larger; */
+                font-family: cursive;
+                font-weight: 800;
+                font-size: 15px;
+            }
+            /* Carousel */
+            .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+                display: block;
+                width: 100%;
+                
+            }
+            
+            .carousel-caption {
+                    right: 20%;
+                    left: 20%;
+                    padding-bottom: 3em;
+                    align-items: center;
+                    
+                    align-content: center;
+                    align-self: center;
+            }
+            
+            .imgContent{
+                font-size: 8vw;
+                -webkit-text-stroke-width: medium;
+                font-family: cursive;
+                text-shadow: 12px 4px 2px black, 10px 10px 10px black;
+            }
+            .carousel-caption > a {
+                font-size: 6vw;
+                color: #d10202;
+                font-family: cursive;
+                text-shadow: 1px 1px 0px white, 1px 7px 32px black;
+                cursor: pointer;
+            }
+            
+           .title{
+                color: #8f1a45;
+                font-weight: bolder;
+                font-size: 36px;
+                font-family: cursive;
+                text-shadow: 2px 1px black;
+            }
+            .title::before{
+                content:" ";
+                background: #8f1a45;
+                height: 3px;
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                transform:translateY(45px);
+                box-shadow: 2px 1px black;
+            }
+            .title::after{
+                content:" ";
+                background: #8f1a45;
+                height: 10px;
+                border-radius: 20px;
+                width: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                box-shadow: 2px 1px black;
+            }
+            section{
+                margin: 2vw;
+                padding:2vw;
+                background: whitesmoke;
+            }
+            
+            .slideani{
+                visibility: hidden;
+            }
+            
+            .slideanishow{
+                animation-name: slideanimation;
+                -webkit-animation-name: slideanimation;
+                
+                animation-duration: 1s;
+                -webkit-animation-duration: 1s;
+                
+                visibility: visible;
+              
+            }
+            @keyframes slideanimation{
+                0%{
+                    opacity:0;
+                    transform:translateY(20%);
+                }
+                100%{
+                    opacity:1;
+                    transform:translateY(0%);
+                }
+            }
+            
+            @-webkit-keyframes slideanimation{
+                0%{
+                    opacity:0;
+                    -wekit-transform: translateY(20%);
+                }
+                100%{
+                    opacity:1;
+                    -webkit-transform: translateY(0%);
+                }
+            }
+            
+            .thumbnail{
+                background: url("https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg");
+            background-repeat: repeat;
+            text-decoration: none;
+            cursor: pointer;
+            }
+            .thumbnail:hover{
+                box-shadow: 0px 0px 10px #5a0d2a;
+                
+            }
+            .thumbnail h4,h5{
+                text-decoration:none;
+                color:black;
+                font-weight:lighter;
+            }
+            
+            /* carousel inside modal slideshow */
+            .modal-body {
+                position: relative;
+                padding: 0px;
+            }
+            .modal-content{
+                min-width: fit-content;
+            }
+           
+            .modal .carousel {
+                position: relative;
+                display: inline-block;
+            }
+            .modal h3{
+                color: #5a0d2a;
+                font-weight: bold;
+            }
+            .collection-spy{
+                position: relative;
+                height: 500px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+            .collection-spy > .row{
+                border-top: 1px solid black;
+                padding: 20px;
+            }
+            .btn-default{
+                background: white;
+                color: #5a0d2a;
+                font-size: larger;
+                font-weight: bold;
+                border: 1px solid #5a0d2a;
+            }
+            .btn-default:hover,.btn-default:focus{
+                background: #5a0d2a;
+                color: white;
+                font-size: larger;
+               border: 1px solid #5a0d2a;
+            }
+            .thumbnail > h3{
+                font-weight: bold;
+                color:#5a0d2a;
+            }
+             .size label {
+                display: inline-block;
+                width: 40px;
+                height 40px;
+                border: 2px solid blueviolet;
+                border-radius: 50%;
+                padding: 10px;
+                border: solid 2px #ccc;
+                transition: all 0.3s;
+                cursor: pointer;
+              }
+              
+              .size label:hover{
+                  border: 2px solid #5a0d2a;
+              }
+              .size input[type="radio"] {
+                display: none;
+                border: 2px solid #5a0d2a;
+              }
+              
+              .size input[type="radio"]:checked + label {
+                border: 2px solid #5a0d2a;
+                border-radius: 50%;
+                color:#5a0d2a;
+              }
+              .animated{
+                  animation-duration: 2s;
+              }
+              .review .col-md-4{
+                  padding: 20px;
+                  border-left: 6px solid #5a0d2a;
+                  border-radius: 15px;
+                  color:black;
+                  background: white;
+                 box-shadow: 2px 2px 6px #5a0d2a;
+              }
+              .review h3{
+                  color:#5a0d2a;
+                  font-family:cursive;    
+              }
+              footer{
+                  background: url("https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg");
+                      background-repeat:repeat;
+                      border-top: 1px dashed #a37989;
+              }
+              .footerrow{
+                  margin: 20px;
+                  color:black;
+                  padding: 10px;
+              }
+              .footerrow h4{
+                  font-weight: bold;
+                  color: #5a0d2a;
+              }
+              .footerrow a{
+                  color:black;
+                  text-decoration: none;
+              }
+              
+              .category{
+                  display: grid;
+                  background: url("https://img.freepik.com/free-photo/watercolor-paper-texture_1194-5416.jpg?size=626&ext=jpg");
+                    background-repeat:repeat;
+   
+              }
+              .category button{
+                margin: 10px;
+                padding: 10px;
+                background: transparent;
+                border:none;
+                font-size: x-large;
+                color: #62122f;
+                font-family: fantasy;
+                
+              }
+    </style>
+    </head>
+    <body>
+        
+          <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <img class="navbar-brand" src="img/logo.png" alt="Wardrobe" height="280">
+                </div>
+                
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right nav-pills">
+                        <li><a data-toggle="pill" href="#home">Home <span class="glyphicon glyphicon-home"></span></a></li>
+                        <li><a data-toggle="pill" href="#aboutus">About us <span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
+                        <li><a data-toggle="pill" href="#cart">Cart <span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
+                        
+                    </ul>
+                </div>
+                
+  
+            </div>
+            
+          </nav>  
+        
+        
+        
+   <!-- Home Page -->     
+   <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+                        
+                    <!-- Wrapper for slides -->
+                    
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="item active"  >
+                    <img src="https://www.ecca.info/wp-content/uploads/2019/02/Styling-Your-Kid.jpg" alt="child" height="300">
+                        <div class="carousel-caption">
+                          <h3 class="imgContent animated bounceInDown delay-0s ">CHILD'S FASHION'S WEAR </h3>
+                          <a class="animated bounceInLeft delay-2s">...Rent Now...</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                      <img src="https://wallpapersprinted.com/download/2/bride_black_and_white-wallpaper-1680x1050.jpg" alt="gown" height="300">
+                      <div class="carousel-caption">
+                        <h3 class="imgContent animated bounceInLeft delay-0s">GLAM GOWNS</h3>
+                        <a class="animated bounceInUp delay-2s">...Rent Now...</a>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                    <img src="https://g3fashion.com/blog/wp-content/uploads/2018/11/Sherwani-bridal-groom-suits.jpg" height="300">
+                        <div class="carousel-caption">
+                          <h3 class="imgContent animated bounceInDown delay-0s">WEDDING SHERWANEES</h3>
+                          <a class="animated bounceInUp delay-2s">...Rent Now...</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                      <img src="https://images.shaadisaga.com/shaadisaga_production/photos/pictures/000/475/300/new_large/dsn_%281%29.jpg?1532517894" height="300">
+                      <div class="carousel-caption ">
+                        <h3 class="imgContent animated bounceInRight delay-0s">WEDDING LEHANGAS</h3>
+                        <a class="animated bounceInLeft delay-2s">...Rent Now...</a>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <img src="https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  height="300">
+                      <div class="carousel-caption">
+                        <h3 class="imgContent imgContent animated bounceInLeft delay-0s">WESTERN FASHION</h3>
+                        <a class="animated bounceInUp delay-2s">...Rent Now...</a>
+                      </div>
+                    </div>
+                    <div class="item">
+                        <img src="https://2.bp.blogspot.com/-1QI_aP__cvY/Ui9savObFMI/AAAAAAAAEFg/-2zVb1DiPjw/s1600/Sarar-Fall-Winter-2013-Tamar-Yilmaz-04.jpg"  height="300">
+                        <div class="carousel-caption">
+                          <h3 class="imgContent animated bounceInUp delay-0s">HIS & HER STYLES</h3>
+                          <a class="animated bounceInLeft delay-2s">...Rent Now...</a>
+                        </div>
+                    </div>
+                </div>
+                    
+                <!-- Left and right controls -->
+                
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+            
+            
+            <section id="services">
+                <div class="container text-center ">
+                    <h1 class="title">How we work ? </h1>
+                    <div class="row text-center slideani">
+                        <div class ="col-sm-3 col-md-3">
+                            <img src="img/book.png" height="100">
+                            <h4>1. Place Order</h4>
+                            <p>Pick your perfect style from our collection of designer outfits and accessories.</p>
+                                
+                        </div>
+                        <div class ="col-sm-3 col-md-3">
+                            <img src="img/deliver.png" height="100">
+                            <h4>2. Get Delivery</h4>
+                            <p>Outfit will be altered to your size and dry cleaned before delivery.Pay amount and Receive your order</p>
+                        </div>
+                        <div class ="col-sm-3 col-md-3">
+                            <img src="img/were.png" height="100">
+                            <h4>3. Flaunt It</h4>
+                            <p>Flaunt your look with that perfect outfit chosen by you and enjoy the compliments</p>
+                        </div>
+                        <div class ="col-sm-3 col-md-3">
+                            <img src="img/return.jpg" height="100">
+                            <h4>4. Return it</h4>
+                            <p>Pack the outfit and we'll pick it up a day after your occasion or the dates chosen by you.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="category text-center">
+                <h1 class="title">Categories</h1>
+                <p>Browse through our dreamy catalog and enrobe your wishes.</p>
+                <div class="row">
+                    
+                    <div class="col-md-6 col-sm-6 order-md-1 order-sm-1" style="float:left;"> 
+                        <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11948186/2020/6/15/bc593e7a-4d50-4fc6-8edb-56590b3e6d2b1592205204822Chhabra555purple1.jpg"  style="width: 100%;height:auto;float: left;">
+                    </div>
+                    <div class="col-md-6 col-sm-6 category order-md-2 order-sm-2" style="padding: 6%;float:right;"> 
+                        <button type="button">Bridal Lehangas</button>
+                        <button type="button">Designer Lehangas</button>
+                        <button type="button">Indo Western Outfits</button>
+                        <button type="button">Women</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 category order-md-4 order-sm-4" style="padding: 5%;"> 
+                        <button type="button">Sherwani</button>
+                        <button type="button">Blazers</button>
+                        <button type="button">Suits</button>
+                        <button type="button">Indo Western</button>
+                        <button type="button">Men</button>
+                    </div>
+                    <div class="col-md-6 col-sm-6 order-md-3 order-sm-3">
+                        <img src="https://i.pinimg.com/originals/df/50/02/df5002cfd02c0bba616540e562a49466.jpg" alt="men's shervani"  style="width: 100%;height:auto;">
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <!------ Feature Collections ------->
+            
+            <section class="collection text-center">
+                <h1 class="title">Our Collections</h1>
+                
+                <!--------  ccllection-list -------------->
+                
+                    <nav id="collection-list" class="navbar navbar-light bg-light">
+                        <ul class="nav nav-pills">
+                          <li class="nav-item">
+                            <a class="nav-link" href="#menscollection">Men's Collection</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#womencollection">Women's Collection</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#childcollection">Child's Collections</a>
+                          </li>
+                          
+                        </ul>
+                      </nav>
+                
+                <!------   Men's Collections  --->
+                
+                
+                <div class='collection-spy' data-spy='scroll' data-target='#collection-list' data-offset="0">
+                <div class="row slideani" id='menscollection'>
+                    <h1>Men's Collection</h1>
+                    <div class="col-md-3 col-sm-3 " data-target="#coat1" data-toggle="modal">
+                            <div class="thumbnail">
+                            <img src="imgcollection/coat1.jpg">
+                            <h3 class="coat-title">Hangup</h3>
+                            <h4>Men Blue Solid Regular Fit Single-Breasted Blazer</h4>
+                            <h5>Rs. 500</h5>
+                            </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 " data-target="#coat2" data-toggle="modal">
+                        
+                            <div class="thumbnail">
+                            <img src="imgcollection/coat2.1.jpg">
+                            <h3 class="coat-title">Wintage</h3>
+                            <h4>Men Purple Printed Regular-Fit Bandhgala Blazer</h4>
+                            <h5>Rs. 700</h5>
+                            </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-3 " data-target="#suit1" data-toggle="modal">
+                        
+                        <div class="thumbnail">
+                            <img src="imgcollection/suit1.jpg">
+                            <h3 class="coat-title">Luxurazi</h3>
+                            <h4>Grey Solid Single-Breasted Formal Suit</h4>
+                            <h5>Rs. 1000</h5>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-3 col-sm-3 " href="#suit2" data-toggle="modal">
+                        
+                        <div class="thumbnail">
+                            <img src="imgcollection/suit2.1.jpg">
+                            <h3 class="coat-title">Arrow</h3>
+                            <h4>Charcoal Grey Single-Breasted Formal Suit</h4>
+                            <h5>Rs. 900</h5>
+                        </div>
+                        
+                    </div>
+                    
+                    <button type='button' class='btn btn-default'>View more</button>
+                </div>
+                    
+                    <!-------  Women's Collection  ---->
+                    
+                    <div class="row" id='womencollection'>
+                        <h1>Women's Collection</h1>
+                    <div class="col-md-3 col-sm-3 " href="#coat1" data-toggle="modal">
+                            <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/8340727/2019/1/8/0a720b60-0d54-4a48-91c1-9009c3746ed61546951716014-Inddus-Pink-Semi-Stitched-Lehenga--Blouse-with-Dupatta-95415-1.jpg">
+                            <h3 class="coat-title">Lehangas</h3>
+                            <h4>Beautiful</h4>
+                            <h5>Rs. 500</h5>
+                            </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-3 " href="#coat2" data-toggle="modal">
+                        
+                            <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10353693/2019/8/2/5a255764-4856-4f35-ac0b-1fdbc933b12f1564749214078-Chhabra-555-Made-to-Measure-Pink-Crop-Top-Lehenga-Set-with-S-1.jpg">
+                            <h3 class="coat-title">Lehangas</h3>
+                            <h4>Beautiful</h4>
+                            <h5>Rs. 500</h5>
+                            </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-3 " href="#suit1" data-toggle="modal">
+                        <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11948186/2020/6/15/bc593e7a-4d50-4fc6-8edb-56590b3e6d2b1592205204822Chhabra555purple1.jpg">
+                            <h3 class="coat-title">Lehangas</h3>
+                            <h4>Beautiful</h4>
+                            <h5>Rs. 500</h5>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-3 " href="#suit2" data-toggle="modal">
+                        
+                        <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/8091939/2018/12/5/c9863bdb-572d-4557-b84a-56efab1625d01543992895757-Mitera-Red-Semi-Stitched-Lehenga--Blouse-with-Dupatta-329154-1.jpg">
+                            <h3 class="coat-title">Lehangas</h3>
+                            <h4>Beautiful</h4>
+                            <h5>Rs. 500</h5>
+                        </div>
+                        
+                    </div>
+                    
+                        <button type='button' class='btn btn-default'>View more</button>
+                </div>
+                    
+                    <!---Child collection --->
+                    
+                    <div class="row" id='childcollection'>
+                        <h1>Kid's Collection</h1>
+                    <div class="col-md-3 col-sm-3 " href="#coat1" data-toggle="modal">
+                        
+                            <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/8747209/2019/2/11/a7abea5b-7d8c-4189-992a-4498eb1540271549887273737-naughty-ninos-Girls-White-Printed-Fit-and-Flare-Dress-935154-1.jpg">
+                            <h3 class="coat-title">Hangup</h3>
+                            <h4>Men Blue Solid Regular Fit Single-Breasted Blazer</h4>
+                            <h5>Rs. 500</h5>
+                            </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-3 " href="#coat2" data-toggle="modal">
+                       
+                            <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2019/6/9/2dfa892e-4343-46e1-acb4-c1ae862472511560037725423-1.jpg">
+                            <h3 class="coat-title">Hangup</h3>
+                            <h4>Men Blue Solid Regular Fit Single-Breasted Blazer</h4>
+                            <h5>Rs. 500</h5>
+                            </div>
+                       
+                    </div>
+                    <div class="col-md-3 col-sm-3 " href="#coat3" data-toggle="modal">
+                        
+                        <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/8975957/2019/3/7/1d96e5ea-19a7-4ac4-be96-8b04f25f6a931551949945712-Naughty-Ninos-Girls--Navy-Blue-Floral-Printed-Fit-and-Flared-1.jpg">
+                            <h3 class="coat-title">Hangup</h3>
+                            <h4>Men Blue Solid Regular Fit Single-Breasted Blazer</h4>
+                            <h5>Rs. 500</h5>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-3 col-sm-3 "href="#coat3" data-toggle="modal">
+                        
+                        <div class="thumbnail">
+                            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12035118/2020/7/9/56e364cd-6fb4-4784-8873-20ed2e5f19181594300517352-YK-Boys-Shirts-8241594300516217-1.jpg">
+                            <h3 class="coat-title">Hangup</h3>
+                            <h4>Men Blue Solid Regular Fit Single-Breasted Blazer</h4>
+                            <h5>Rs. 500</h5>
+                        </div>
+                        
+                    </div>
+                </div>
+                    <button type='button' class='btn btn-default'>View more</button>
+                </div>
+            </section>
+            
+            
+            <!--------Customer Reviews --->
+            
+            
+            <section class="review">
+                <div class="row">
+                    <H3 class="text-center title">Customer Reviews</H3>
+                        
+                    <div class="col-md-4 col-sm-4">
+                        <h3>John Smith</h3>
+                        <p>I wore this stunning gold mirror lehenga for my best friend's destination wedding and 
+                            I absolutely loved the attention that I grabbed that day! The fittimg was perfect too 
+                            Thank you Team Stylease for making me look so gorgeous in my Insta pictures!</p>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <h3>Eliana Despo</h3>
+                        <p>I wore this stunning gold mirror lehenga for my best friend's destination wedding and 
+                            I absolutely loved the attention that I grabbed that day! The fittimg was perfect too 
+                            Thank you Team Stylease for making me look so gorgeous in my Insta pictures!</p>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <h3>Elizabeth</h3>
+                        <p>I wore this stunning gold mirror lehenga for my best friend's destination wedding and 
+                            I absolutely loved the attention that I grabbed that day! The fittimg was perfect too 
+                            Thank you Team Stylease for making me look so gorgeous in my Insta pictures!</p>
+                    </div>
+                </div>
+                
+            </section>
+            
+            
+            <!----- Modal for coat1 ---->
+            
+            <div class="modal fade " id="coat1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Hangup</h3>
+                            <p>Men Blue Solid Regular Fit Single-Breasted Blazer</p>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                <div class="cardmodal1">
+                                    <div id="coat1slides" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#coat1slides" data-slide-to="0" class="active"> </li>
+                                            <li data-target="#coat1slides" data-slide-to="1"></li>
+                                            <li data-target="#coat1slides" data-slide-to="2"></li>
+                                            <li data-target="#coat1slides" data-slide-to="3"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img src="imgcollection/coat1.jpg" alt="coat1" height="300">
+                                            </div>
+                                            <div class="item ">
+                                                <img src="imgcollection/coat11.jpg" alt="coat1" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/coat1.2.jpg" alt="coat1" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/coat1.3.jpg" alt="coat1" height="300">
+                                            </div>
+                                        </div>
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#coat1slides" role="button" data-slide="prev">
+                                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#coat1slides" role="button" data-slide="next">
+                                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div> 
+                                
+                            </center>
+                            <div class='row' style="padding:15px;">
+                                <div class='col-sm-6 col-md-6' >
+                                    <h3>Rs. 500</h3>
+                                    <p>Inclusive of all taxes</p>
+                                    <H4>Select size</H4>
+                                    <form class="size">
+                                        <input type="radio" id="35" name="size">
+                                        <label for="35">35</label>
+
+                                        <input type="radio" id="40" name="size">
+                                        <label for="40">40</label>
+                                        
+                                        <input type="radio" id="45" name="size">
+                                        <label for="45">45</label>
+                                        
+                                        <input type="radio" id="50" name="size">
+                                        <label for="50">50</label>
+                                        
+                                        <input type="radio" id="55" name="size">
+                                        <label for="55">55</label>
+
+                                    </form> <br><br>
+                                    <h3>Delivery Option <span class="fas fa-people-carry"></span></h3>
+                                    <input type='text' placeholder="Enter pincode"><button>Check</button><br>
+                                    <small>Please enter PIN code to check delivery time & Pay on Delivery Availability</small>
+                                    <br><br>
+                                    <ul>
+                                        <li>100% Original Products</li>
+                                        <li>Free Delivery </li>
+                                        <li>Pay on delivery might be available</li>
+                                        <li>Easy returns and exchanges</li>
+                                        
+                                    </ul>
+                                    <button type="button" class="btn btn-default">Add to Cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    <h3>Product Details</h3>
+                                        <p>Blue solid regular-fit blazer, has a notched lapel, single-breasted, button closures on the front, three pockets, long sleeves, and a double-vented back hem.
+                                        Comes with a pocket square.
+                                        </p>
+                                        <h3>Features</h3>
+                                        <p>Moisture Absorbent - It absorbs twice as much moisture as cotton, making it the "Most Thirsty Fabric."<br>
+                                        UV Protection - Hangup fabric  protects the skin from harmful UV rays <br>
+                                        Natural Breathing - Hangup fabric is comfortable and easy, Insulating in winter and breathable in summer.<br>
+                                        Anti-Bacterial - Hangup uses peach finish to make fabric soft to use and makes it "Health Fabric", Anti-bacterial.<br>
+                                        Inimitable Feel - The true feel of  can never be replicated<br>
+                                        Meticulous Weave - Quality and detailing in the weave of fabric is the product .<br>
+                                        Sheer vibrancy - Over 20,000 high quality designs of patterns and textures to choose from.<br>
+                                        For A Lifetime- Hangup buys from indian mail and make sure every wash keep the same finish.<br>
+                                        </p>
+                                        <h3>Material & Care</h3>
+                                        <p>40% polyester and 60% viscose rayon
+                                            Dry clean only
+                                         </p>
+                                         <h4>Product Code: 8889035</h4>
+                                    </div>
+                                </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            
+            <!----Modal for coat2 ----->
+            
+            
+            <div class="modal fade " id="coat2" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Wintage</h3>
+                            <p>Men Purple Printed Regular-Fit Bandhgala Blazer</p>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                    <div id="coat2slides" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#coat2slides" data-slide-to="0" class="active"> </li>
+                                            <li data-target="#coat2slides" data-slide-to="1"></li>
+                                            <li data-target="#coat2slides" data-slide-to="2"></li>
+                                            <li data-target="#coat2slides" data-slide-to="3"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img src="imgcollection/coat2.1.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item ">
+                                                <img src="imgcollection/coat2.2.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/coat2.3.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/coat2.4.jpg" alt="coat2" height="300">
+                                            </div>
+                                        </div>
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#coat2slides" role="button" data-slide="prev">
+                                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#coat2slides" role="button" data-slide="next">
+                                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                            </center>
+                            <div class='row' style="padding:15px;">
+                                <div class='col-sm-6 col-md-6' >
+                                    <h3>Rs. 700</h3>
+                                    <p>Inclusive of all taxes</p>
+                                    <H4>Select size</H4>
+                                    <form class="size">
+                                        <input type="radio" id="38" name="size">
+                                        <label for="38">38</label>
+
+                                        <input type="radio" id="41" name="size">
+                                        <label for="41">40</label>
+                                        
+                                        <input type="radio" id="42" name="size">
+                                        <label for="42">42</label>
+                                        
+                                        <input type="radio" id="44" name="size">
+                                        <label for="44">44</label>
+                                        
+                                        <input type="radio" id="46" name="size">
+                                        <label for="46">46</label>
+
+                                    </form> <br><br>
+                                    <h3>Delivery Option <span class="fas fa-people-carry"></span></h3>
+                                    <input type='text' placeholder="Enter pincode"><button style="color:red;">Check</button><br>
+                                    <small>Please enter PIN code to check delivery time & Pay on Delivery Availability</small>
+                                    <br><br>
+                                    <ul>
+                                        <li>100% Original Products</li>
+                                        <li>Free Delivery </li>
+                                        <li>Pay on delivery might be available</li>
+                                        <li>Easy returns and exchanges</li>
+                                        
+                                    </ul>
+                                    <button type="button" class="btn btn-default">Add to Cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    <h3>Product Details</h3>
+                                        <p>Purple printed regular-fit bandhgala blazer, has a mandarin collar, a full button placket, long sleeves, two flap pockets, one chest welt pocket, an attached lining, and a double-vented back hem
+                                            Comes with a pocket square
+                                        </p>
+                                        
+                                        <h3>Material & Care</h3>
+                                        <p>Banarsi Rayon Cotton
+                                            Dry Clean Only
+                                         </p>
+                                         <h4>Product Code: 9228483</h4>
+                                    </div>
+                                </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            
+            <!----Modal for suit1 ----->
+            
+            
+            <div class="modal fade " id="suit1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">LUXURAZI</h3>
+                            <p>Grey Solid Single-Breasted Formal Suit</p>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                    <div id="suit1slides" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#suit1slides" data-slide-to="0" class="active"> </li>
+                                            <li data-target="#suit1slides" data-slide-to="1"></li>
+                                            <li data-target="#suit1slides" data-slide-to="2"></li>
+                                            <li data-target="#suit1slides" data-slide-to="3"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img src="imgcollection/suit1.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item ">
+                                                <img src="imgcollection/suit1.2.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/suit1.3.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/suit1.4.jpg" alt="coat2" height="300">
+                                            </div>
+                                        </div>
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#suit1slides" role="button" data-slide="prev">
+                                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#suit1slides" role="button" data-slide="next">
+                                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                            </center>
+                            <div class='row' style="padding:15px;">
+                                <div class='col-sm-6 col-md-6' >
+                                    <h3>Rs. 1000</h3>
+                                    <p>Inclusive of all taxes</p>
+                                    <H4>Select size</H4>
+                                    <form class="size">
+                                        <input type="radio" id="38" name="size">
+                                        <label for="38">38</label>
+
+                                        <input type="radio" id="41" name="size">
+                                        <label for="41">40</label>
+                                        
+                                        <input type="radio" id="42" name="size">
+                                        <label for="42">42</label>
+                                        
+                                        <input type="radio" id="44" name="size">
+                                        <label for="44">44</label>
+                                        
+                                        <input type="radio" id="46" name="size">
+                                        <label for="46">46</label>
+
+                                    </form> <br><br>
+                                    <h3>Delivery Option <span class="fas fa-people-carry"></span></h3>
+                                    <input type='text' placeholder="Enter pincode"><button style="color:red;">Check</button><br>
+                                    <small>Please enter PIN code to check delivery time & Pay on Delivery Availability</small>
+                                    <br><br>
+                                    <ul>
+                                        <li>100% Original Products</li>
+                                        <li>Free Delivery </li>
+                                        <li>Pay on delivery might be available</li>
+                                        <li>Easy returns and exchanges</li>
+                                        
+                                    </ul>
+                                    <button type="button" class="btn btn-default">Add to Cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    <h3>Product Details</h3>
+                                        <p>Grey solid formal suit
+                                            Grey solid blazer, has a notched lapel, single-breasted with button closure, long sleeves, three pockets, double-vented back hem, an attached lining with three built-in pockets
+                                            Grey waistcoat, has a V-neck, sleeveless, full button closure, and three pockets  
+                                            Grey solid mid-rise formal trousers, has four pockets, a zip fly with a button closure, a waistband with belt loops
+                                        </p>
+                                        
+                                        <h3>Material & Care</h3>
+                                        <p>Wool blend Dry-clean
+                                         </p>
+                                         <h4>Product Code: 6774707</h4>
+                                    </div>
+                                </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            
+            <!----Modal for suit2 ----->
+            
+            
+            <div class="modal fade " id="suit2" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Park Avenue</h3>
+                            <p>Blue Solid Super Slim Fit Single-Breasted Suit</p>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                    <div id="suit2slides" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#suit2slides" data-slide-to="0" class="active"> </li>
+                                            <li data-target="#suit2slides" data-slide-to="1"></li>
+                                            <li data-target="#suit2slides" data-slide-to="2"></li>
+                                            <li data-target="#suit2slides" data-slide-to="3"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img src="imgcollection/suit2.1.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item ">
+                                                <img src="imgcollection/suit2.2.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/suit2.3.jpg" alt="coat2" height="300">
+                                            </div>
+                                            <div class="item">
+                                                <img src="imgcollection/suit2.4.jpg" alt="coat2" height="300">
+                                            </div>
+                                        </div>
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#suit2slides" role="button" data-slide="prev">
+                                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#suit2slides" role="button" data-slide="next">
+                                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                            </center>
+                            <div class='row' style="padding:15px;">
+                                <div class='col-sm-6 col-md-6' >
+                                    <h3>Rs. 900</h3>
+                                    <p>Inclusive of all taxes</p>
+                                    <H4>Select size</H4>
+                                    <form class="size">
+                                        <input type="radio" id="36" name="size">
+                                        <label for="36">36</label>
+
+                                        <input type="radio" id="38" name="size">
+                                        <label for="38">38</label>
+                                        
+                                        <input type="radio" id="40" name="size">
+                                        <label for="40">40</label>
+                                        
+                                        <input type="radio" id="42" name="size">
+                                        <label for="42">42</label>
+                                        
+                                        <input type="radio" id="44" name="size">
+                                        <label for="44">44</label>
+
+                                    </form> <br><br>
+                                    <h3>Delivery Option <span class="fas fa-people-carry"></span></h3>
+                                    <input type='text' placeholder="Enter pincode"><button style="color:red;">Check</button><br>
+                                    <small>Please enter PIN code to check delivery time & Pay on Delivery Availability</small>
+                                    <br><br>
+                                    <ul>
+                                        <li>100% Original Products</li>
+                                        <li>Free Delivery </li>
+                                        <li>Pay on delivery might be available</li>
+                                        <li>Easy returns and exchanges</li>
+                                        
+                                    </ul>
+                                    <button type="button" class="btn btn-default">Add to Cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    <h3>Product Details</h3>
+                                        <p>Blue solid casual suit
+                                            Blue solid blazer, has a shawl collar, single-breasted with button closure,double vented, long sleeves, three pockets, 
+                                            an attached lining with four pockets, Comes with an attached pocket square
+                                            Blue solid design mid-rise trousers, has four pockets, zip fly with a hook-and-bar and a button closure, a waistband with belt loops</p>
+                                        
+                                        <h3>Material & Care</h3>
+                                        <p>82% Terry and 18% Rayon
+                                            Dry clean
+                                         </p>
+                                         <h4>Product Code: 11010820</h4>
+                                    </div>
+                                </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+               
+        </div>
+       
+       
+       <!-- ------------------Women's Fashion--------------------------- -->
+        <div id="aboutus" class="tab-pane fade"><h1 class='title text-center'>About us</h1></div>
+         <!-- ------------------Men's Fashion--------------------------- -->
+         <div id="cart" class="tab-pane fade"><H1 class='title text-center'>Your Cart</H1></div>
+    </div>
+        <script>
+            $(window).scroll(function(){
+                $(".slideani").each(function(){
+                var pos = $(this).offset().top;
+                var wintop = $(window).scrollTop();
+                if(pos < wintop + 400){
+                    $(this).addClass("slideanishow");
+                }
+            });
+            });
+            $('.carousel').carousel({
+                interval: 4000
+              });
+              
+            
+        </script>
+        <footer>
+            <div class="row footerrow">
+                <div class="col-md-3  col-sm-3">
+                    <h4> Quick Links</h4>
+                    <ul>
+                        <li><a>How it works</a></li>
+                        <li><a>About us</A></li>
+                        <li><a>Shipping & delivery policy</a></li>
+                        <li><a>Privacy policy</a></li>
+                        <li><a>Cancellation &return policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6  col-sm-6">
+                    <h4>Terms & conditions</h4>
+                    
+                </div>
+                <div class="col-md-3  col-sm-3">
+                    <h4>Find us</h4>
+                    <p>9867344274</p>
+                    <p>123@meramail.com</p>
+                    <br><br>
+                   
+                    
+                </div>
+            </div>
+        </footer>   
+    </body>
+</html>

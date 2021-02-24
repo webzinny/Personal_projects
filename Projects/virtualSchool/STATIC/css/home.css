@@ -1,0 +1,389 @@
+.btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: #2e6da4;
+    margin: 10px;
+    padding: 5px;
+        height: fit-content;
+    width: 95%;
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: fit-content;
+    width: fit-content;
+}
+body{
+    background-color: #ffd4f76e;
+}
+
+                   /* Slideshow container */
+                 .slideshow-container {
+                   position: relative;
+                   margin: auto;
+                    margin-top: 90px;
+                 }
+                 .mySlides{
+
+                     border: 1px solid black;
+                     padding: 20px;
+                     color: cornsilk;
+                     width:98%;
+                     height: 184px;
+                     box-shadow: inset 14px -10px 20px 5px rgba(1, 4, 19, 0.5);
+                      background-image: url("/static/images/sch5.jpg");
+
+
+                 }
+                 .fade{
+                       box-shadow: outset 14px -10px 20px 5px rgba(1, 4, 19, 0.5);
+
+                 }
+
+                 .dot {
+                   height: 15px;
+                   width: 15px;
+                   margin: 22px 2px;
+                   background-color: #bbb;
+                   border-radius: 50%;
+                   display: inline-block;
+                   transition: background-color 0.6s ease;
+                 }
+
+                 .active {
+                   background-color: #717171;
+                 }
+
+                 /* Fading animation */
+                 .fade {
+                   -webkit-animation-name: fade;
+                   -webkit-animation-duration: 1.5s;
+                   animation-name: fade;
+                   animation-duration: 2s;
+                   margin-bottom: -13px;
+                   margin-left: 5px;
+                 }
+
+                 @-webkit-keyframes fade {
+                   from {opacity: .4}
+                   to {opacity: 1}
+                 }
+
+                 @keyframes fade {
+                   from {opacity: .4}
+                   to {opacity: 1}
+                 }
+
+                 /* On smaller screens, decrease text size */
+                 @media only screen and (max-width: 300px) {
+                   .text {font-size: 11px}
+                 }
+
+                 center{
+                     background: black;
+                     opacity: 0.85;
+                     padding: 10px;
+                 }
+                 H4{
+                     font-size: 18px;
+                     font-weight:bold;
+                 }
+
+
+                    .name,.email,.contact,.state,.city, .password,.rpassword{
+
+                        color: black;
+                        padding: 10px;
+                        margin: 5%;
+                        border-color: pink;
+                        border-block-start: none;
+                        border-inline-end: none;
+                        border-inline-start: 1px solid black;
+                        height: auto;
+                        width: -webkit-fill-available;
+                    }
+                     h2 {
+                        color: #47024f;
+                        margin-block-start: 0rem;
+                        font-weight: bold;
+                        margin-bottom: 15px;
+                    }
+                     .content,.register{
+                             text-align: center;
+                        width: 90%;
+                        margin: 10px 20px;
+                     }
+                    .register .user-box {
+                      position: relative;
+                    }
+
+                    .register .user-box input {
+                        width: 100%;
+                        padding: 10px 0px 2px;
+                        font-size: 15px;
+                        color: black;
+                        margin-bottom: 20px;
+                        border: none;
+                      border-bottom: 2px solid #630d88;
+                        outline: none;
+                        background: transparent;
+                    }
+                    .register .user-box label {
+                      position: absolute;
+                      top:0;
+                      left: 10px;
+                      padding: 12px 0px 2px;
+                      font-size: 15px;
+                      color: black;
+                      pointer-events: none;
+                      transition: .5s;
+                      opacity: 0.5;
+                    }
+
+                    .register .user-box input:focus ~ label,
+                    .register .user-box input:valid ~ label {
+                      top: -20px;
+                      left: 0;
+                      color: black;
+                      font-size: 12px;
+                    }
+
+                    .register form a {
+                      position: relative;
+                      display: inline-block;
+                      padding: 10px 20px;
+                      color: black;
+                      font-size: 16px;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      overflow: hidden;
+                      transition: .5s;
+                      margin-top: 40px;
+                      letter-spacing: 4px;
+                    }
+                    input:-internal-autofill-selected {
+                        -webkit-appearance:none;
+                       background-color: rgb(0,0,0) !important;
+
+                        background-image: none !important;
+                        color: black;
+                    }
+                    button {
+                        width: 50%;
+                        height: 40px;
+                        border: 2px solid #520080;
+                        outline: none;
+                        color: #fff;
+                        background: #26062e;
+                        cursor: pointer;
+                        position: relative;
+                        z-index: 0;
+                        font-size: 15px;
+                        border-radius: 40px;
+                    }
+                    button:hover{
+                         border: 2px solid green;
+                    }
+                    button:focus{
+                       border: 2px solid blue;
+                       color:white;
+                       background: blue;
+                    }
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+
+
+ /*login/signup*/
+
+
+                        .tab-style{
+                        font-size:20px;
+                        width:50%;
+                        background-color:#f2f2f2;
+                          text-align:center;
+
+
+                        }
+                        .nav-tabs > li > a {
+                            margin-right: 0px;
+                            color:grey;
+                        }
+
+                    .btn-block {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        font-size: 18px;
+                        background: linear-gradient(45deg, black, transparent);
+
+                        width: 90%;
+
+                    }
+                        .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+                                background: #45024d;
+                                color: white;
+                                font-weight: bolder;
+                            }
+
+                        .login-shadow{-webkit-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+                        -moz-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+                        box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+                          z-index:1;
+
+                        }
+
+                        .signup-shadow{-webkit-box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
+                        -moz-box-shadow: -5px -5px 6px 0px rgba(82,82,82,0.52);
+                        box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
+
+                        }
+
+
+                        .modal-header{background-color:#e5ecf4;}
+
+                        .modal-content{
+                            margin-bottom: 20px;
+                        }
+                        .group {
+                                position: relative;
+                                margin-top: 30px;
+                        }
+                            fieldset {
+                            min-width: 0;
+                            padding: 0;
+                            margin: 0;
+                            border: 0;
+                            background:#45024d;
+                        }
+
+                        .input {
+                            font-size: 18px;
+                            padding: 5px 1px 5px 1px;
+                            -webkit-appearance: none;
+                            display: block;
+                            background: none;
+                            color: #ffffff;
+                            width: 100%;
+                            border: none;
+                            border-radius: 0;
+                            border-bottom: 1px solid #fee1ff;
+                        }
+
+                        .input:focus { outline: none; }
+
+
+                        /* Label */
+
+                        .label {
+                                color: whitesmoke;
+                                font-size: 18px;
+                                font-weight: normal;
+                                position: absolute;
+                                pointer-events: none;
+                                left: -10px;
+                                top: 10px;
+                                transition: all 0.2s ease;
+                        }
+                        /* active */
+
+                        .input:focus ~ .label, .input.used ~ .label {
+                                top: -20px;
+                          transform: scale(.75); left:-15px;
+                                /* font-size: 14px; */
+                                color:whitesmoke;
+                        }
+
+
+                        /* Underline */
+
+                        .bar {
+                                position: relative;
+                                display: block;
+                                width: 100%;
+                        }
+
+                        .bar:before, .bar:after {
+                                content: '';
+                                height: 2px;
+                                width: 0;
+                                bottom: 1px;
+                                position: absolute;
+                                background: #4a89dc;
+                                transition: all 0.2s ease;
+                        }
+
+                        .bar:before { left: 50%; }
+
+                        .bar:after { right: 50%; }
+
+
+                        /* active */
+
+                        .input:focus ~ .bar:before, .input:focus ~ .bar:after { width: 50%; }
+
+
+                        /* Highlight */
+
+                        .highlight {
+                                position: absolute;
+                                height: 60%;
+                                width: 100px;
+                                top: 25%;
+                                left: 0;
+                                pointer-events: none;
+                                opacity: 0.5;
+                        }
+
+
+                        /* active */
+
+                        .input:focus ~ .highlight {
+                                animation: inputHighlighter 0.3s ease;
+                        }
+
+
+                        @media  screen and (max-width: 767px) and (min-width: 576px){
+                          #myModal{margin-left:20%;
+                                    margin-right:20%;}
+
+                          #forgot-password{margin-left:20%;
+                                    margin-right:20%;
+                                    font-size: 10px;
+                          }
+                        }
+
+
+                        @media screen and (min-width: 768px) {
+
+                                #myModal .modal-dialog  {width:500px;}
+
+                          #forgot-password .modal-dialog{width:500px;}
+
+                          .modal-body{padding-left:50px;
+                                      padding-right:50px;}
+                        }
+
+
+                        .modal-body{
+                          background:#45024d;
+                        }
+
+                      #sticky-footer {
+                      height: 30px;
+                      width:103%;
+                      line-height: 30px;
+                      flex-shrink: none;
+                      background: #222222;
+                      color: white;
+                      margin-top: 5px;
+                      font-family: 'Times New Roman', Times, serif;
+                      }

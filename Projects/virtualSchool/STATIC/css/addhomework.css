@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: sans-serif;
+  }
+  nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+    font-size: 20px;
+  }
+  .button.secondary {
+    border-bottom: 1px #444 solid;
+  }
+  
+  /* Mobile menu */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+  
+  /* Navbar Toggle */
+  .toggle {
+    cursor:pointer;
+  }
+  .bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  .bars:before,
+  .bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .bars:before {
+    top: 5px;
+  }
+  .bars:after {
+    top: -5px;
+  }
+  
+  /* Tablet menu */
+  @media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+  
+    .logo {
+        flex: 1;
+    }
+  
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+        border-radius:50em;
+    }
+    .button.secondary a {
+        background: transparent;    
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition:all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    } 
+  }
+  
+
+  @media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.file-area {
+    width: 100%;
+    position: relative;
+    
+    input[type=file] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .file-dummy {
+      width: 100%;
+      padding: 30px;
+      background: rgba(255,255,255,0.2);
+      border: 2px dashed rgba(255,255,255,0.2);
+      text-align: center;
+      transition: background 0.3s ease-in-out;
+      
+      .success {
+        display: none;
+      }
+    }
+    
+    &:hover .file-dummy {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    input[type=file]:focus + .file-dummy {
+      outline: 2px solid rgba(255,255,255,0.5);
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+    
+    input[type=file]:valid + .file-dummy {
+      border-color: rgba(0,255,0,0.4);
+      background-color: rgba(0,255,0,0.3);
+  
+      .success {
+        display: inline-block;
+      }
+      .default {
+        display: none;
+      }
+    }
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    height: 100%;
+    background: #053777;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+    background: -moz-linear-gradient(top, #053777 0%, #00659b 100%);
+    /* FF3.6+ */
+    
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #053777), color-stop(100%, #00659b));
+    /* Chrome,Safari4+ */
+    
+    background: -webkit-linear-gradient(top, #053777 0%, #00659b 100%);
+    /* Chrome10+,Safari5.1+ */
+    
+    background: -o-linear-gradient(top, #053777 0%, #00659b 100%);
+    /* Opera 11.10+ */
+    
+    background: -ms-linear-gradient(top, #053777 0%, #00659b 100%);
+    /* IE10+ */
+    
+    background: linear-gradient(to bottom, #053777 0%, #00659b 100%);
+    /* W3C */
+    
+  }
+  .container{
+         margin: auto;
+         margin-top: 10%;
+        border: 1px solid black;
+        height: fit-content;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 10px 10px 10px black;
+  }
+  .subject{
+      padding: 20px;
+      overflow: hidden;
+  }
+  .upload-file{
+  padding: 10px;
+  overflow: hidden;
+  }
+  .upload-img{
+     padding: 10px;
+     overflow: hidden;
+  }
+  .submit{
+      float: right;
+    margin-top: -26px;
+    margin-right: 10px;
+    padding: 3px;
+    background: linear-gradient(190deg, black, blue);
+    color: white;
+}
+input[type="file"] {
+    -webkit-appearance: initial;
+    background-color: linear-gradient(190deg, black, blue);
+    cursor: default;
+    align-items: baseline;
+    color: white;
+    text-align: start !important;
+    padding: 3px;
+    border: initial;
+}
+select{
+    float: right;
+    background: transparent;
+    color: white;
+    padding: 3px;
+    width: 40%;
+    border-radius: 20px;
+}
+option{
+  color: black;
+}

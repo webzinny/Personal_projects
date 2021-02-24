@@ -1,0 +1,79 @@
+{%load static%}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Post Time table /syllabus /events</title>
+        <link rel="stylesheet" href="{% static "css/syllabusreport.css" %}">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+        <script>
+        $(function() {
+        $(".toggle").on("click", function() {
+            if ($(".item").hasClass("active")) {
+                $(".item").removeClass("active");
+            } else {
+                $(".item").addClass("active");
+            }
+        });
+    });
+        </script>
+    </head>
+    <body>
+        <main>
+            <nav>
+                <ul class="menu">
+                    <li class="logo"><a href="#">Virtual School</a></li>
+                    <li class="item"><a href="{%url "teacher"%}">Home</a></li>
+                    <li class="item"><a href="#">About</a></li>
+                    <li class="item"><a href="#">Services</a></li>
+                    <li class="toggle"><span class="bars"></span></li>
+                </ul>
+            </nav>
+        </main>
+
+
+    <div class="ptt-container">
+<center>
+  <form  method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="ph-form">
+    <label for="Subject">Choose Class:</label>
+    <select name="Class" id="Choose-subject">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    </div>
+      <div class="ptt-form">
+    <label for="choose-from">Choose Category:</label>
+    <select name="type" id="Choose-from">
+        <option value="Time table">Time table</option>
+        <option value="Syllabus">Syllabus</option>
+        <option value="Event">Event</option>
+    </select>
+    </div>
+    <input type="file" name="file" id="file"style="margin-left: 50px;">
+    <br>
+    <button type="submit">Upload</button>
+      </form>
+</center>
+    </div>
+
+    <br>
+    <br>
+    <br>
+</body>
+</html>

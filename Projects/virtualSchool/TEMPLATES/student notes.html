@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="{% static "css/notes.css" %}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a style="color:white;" href="#">Virtual School</a></li>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+    <div>
+
+        <div class="subjects">
+            <center><h2>Notes</h2></center>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <a href="notes/english">
+                     <img src="{% static "images/notes1.jpg" %}" alt="english">
+                     <div class="centered">English Notes</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="notes/hindi">
+                     <img src="{% static "images/notes1.jpg" %}" alt="english">
+                     <div class="centered">Hindi Notes</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="notes/math">
+                     <img src="{% static "images/notes1.jpg" %}" alt="english">
+                     <div class="centered">Maths Notes</div>
+                    </a>
+                </div>
+
+        </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <a href="notes/science">
+                     <img src="{% static "images/notes1.jpg" %}" alt="english">
+                     <div class="centered">Science Notes</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="notes/social_science">
+                     <img src="{% static "images/notes1.jpg" %}" alt="english">
+                     <div class="centered">Social Notes</div>
+                    </a>
+                </div>
+
+        </div>
+    </div>
+
+    </div>
+
+</body>
+</html>

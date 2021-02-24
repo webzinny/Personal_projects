@@ -1,0 +1,483 @@
+{% load static %}
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+        <!--jQuery library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!--Latest compiled and minified JavaScript-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>School At Home</title>
+        <link href="{% static "css/home.css" %}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <a style="color:white;" class="navbar-brand" href="#">Virtual School</a>
+                </div>
+
+
+
+            </div>
+
+        </nav>
+
+              <!-- Slideshow container -->
+        <div class="slideshow-container">
+                <div class="mySlides fade" >
+                    <center>
+
+                        <h4>EDUCATION</H4>
+                                <H4>is the most POWERFUL weapon</h4>
+                                <h4>you can use to</H4>
+                                <H4>CHANGE the WORLD</h4>
+                    </center>
+                </div>
+
+                <div class="mySlides fade">
+                    <center>
+
+                        <h4>"Learn as much as you can while you are young,</h4>
+                            <h4>since life becomes too busy later." </h4>
+                        <h6> -Dana Stewart Scott</h6>
+                    </center>
+                </div>
+            <div class="mySlides fade">
+                    <center>
+                        <h4>"Learning is a treasure</h4>
+                        <h4>   that will follow its owner everywhere."</h4>
+                    </center>
+                </div>
+            <div class="mySlides fade">
+                    <center>
+
+                        <h4>Education is not the learning of facts,</h4>
+                        <h4>   but the training of the mind to think. </h4>
+                        <h6> -Albert Einstein </h6>
+                    </center>
+                </div>
+        </div>
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+
+        </div>
+        <center>
+        <h3>{{msg}}</h3></center>
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".log-sign-student" style="background: linear-gradient(354deg, #020102, #7026d1); color:white;">Student Login/Signup</button>
+               <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".log-sign-teacher" style="background: linear-gradient(354deg, #020102, #7026d1); color:white;">Teacher Login/Signup</button>
+               <button id="school_reg_btn" onclick="hide()" class="btn btn-primary" type="button"  style="background: linear-gradient(354deg, #020102, #7026d1); color:white;">Register your school</button>
+
+
+
+              <div class="col-md-6 col-sm-6">
+        <section>
+          <div id="school_reg" style="display:none;" class=" box">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <div class="content register">
+                    <h2>School Registration Form </h2>
+                   <h3>   "An email will be sent to you after registering, which consist an unique id for your school"</h3>
+                   <form  id="school_reg_form" method="post">
+                     {%csrf_token%}
+                     <input type="text" name="school_reg_form" value="on" style="display:none;">
+                     <div class="user-box">
+                       <input type="text" name="school_name" required="">
+                       <label>School Name</label>
+                     </div>
+                      <div class="user-box">
+                      <input type="text" name="name" required="">
+                      <label>Your Name</label>
+                    </div>
+                    <div class="user-box">
+                      <input type="email" name="email" required="">
+                      <label>E-mail</label>
+                    </div>
+
+                        <div class="user-box">
+                          <input type="number" name="contact"  required="">
+                          <label>Contact No.</label>
+                        </div>
+
+                        <div class="user-box">
+                          <input type="password" name="password" required="">
+                          <label>Password</label>
+                        </div>
+                        <div class="user-box">
+                          <input type="password" name="re-password" required="">
+                          <label>Re-Type Password</label>
+                        </div>
+                        <p><span><input  type="checkbox"  required></span>I agree to the terms and conditions of services</p>
+                        <button class="submit" type="submit"><b>Register</b></button>
+                        </form>
+                  </div>
+                </div>
+      </section>
+<div class="col-md-6 col-sm-6">
+    <img src="{% static "images/sch1.jpg" %}" alt="img">
+</div> <!-- IMAGE -->
+
+              <!-- Modal teacher sign/signup-->
+                    <div class="modal fade bs-modal-sm log-sign-teacher" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+
+                            <div class="bs-example bs-example-tabs">
+                                <ul id="myTab" class="nav nav-tabs">
+                                  <li id="tab1" class=" active tab-style login-shadow "><a href="#signinteacher" data-toggle="tab">Log In</a></li>
+                                  <li id="tab2" class=" tab-style "><a href="#signupteacher" data-toggle="tab">Sign Up</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="modal-body">
+                            <div id="myTabContent" class="tab-content">
+
+                            <div class="tab-pane fade active in" id="signinteacher">
+                                <form class="form-horizontal" method="post">
+                                  {%csrf_token%}
+                                  <input name="teacher_login_form" value="on" style="display:none;" class="input schname" type="text">
+                                <fieldset>
+                                <!-- Sign In Form -->
+                                <!-- Text input-->
+
+
+                                   <div class="group">
+                    <input required="" name="teacher_email" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                        <label class="label" for="date">Email</label></div>
+
+
+                                <!-- Password input-->
+                                <div class="group">
+                    <input required="" name="password" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                        <label class="label" for="date">Password</label>
+                        </div>
+
+
+                               <div class="forgot-link">
+                                   <a href="#forgot" data-toggle="modal" data-target="#forgot-password" style="font-size:13px; float:right"> Forgot Password? </a>
+                                </div>
+
+
+                                <!-- Button -->
+                                <div class="control-group">
+                                  <label class="control-label" for="signin"></label>
+                                  <div class="controls">
+                                    <button id="signinteacher" name="signin" class="btn btn-primary btn-block">Log In</button>
+                                  </div>
+                                </div>
+                                </fieldset>
+                                </form>
+                            </div>
+
+
+                            <div class="tab-pane fade" id="signupteacher">
+                                <form method="post" class="form-horizontal">
+                                  {% csrf_token %}
+                                  <input required="" name="teacher_reg_form" class="input schname" style="display:none;" value="on" type="text">
+                                <fieldset>
+                                <!-- Sign Up Form -->
+                                <!-- Text input-->
+                                <div class="group">
+                                        <input required="" name="school_id" class="input schname" type="text"><span class="highlight"></span><span class="bar"></span>
+                                        <label class="label">School/college id</label>
+                                </div>
+                                 <div class="group">
+                                        <input name="name" required="" class="input yourname " type="text"><span class="highlight"></span><span class="bar"></span>
+                                        <label class="label">Your Name</label>
+                                </div>
+
+
+
+                                <!--Email input-->
+                                <div class="group">
+                                        <input name="email" required="" class="input youremail " type="email"><span class="highlight"></span><span class="bar"></span>
+                                            <label class="label">Email</label>
+                                </div>
+
+                        <!--contact input-->
+                                <div class="group">
+                                        <input name="phone" required="" class="input phone " type="number"><span class="highlight"></span><span class="bar"></span>
+                                            <label class="label">Contact No.</label>
+                                </div>
+
+
+
+                                <!-- Password input-->
+                                <div class="group">
+                                    <input name="password" required="" class="input pass" type="password"><span class="highlight"></span><span class="bar"></span>
+                                        <label class="label">Password</label>
+                                </div>
+                                 <!-- Password retype input-->
+                                <div class="group">
+                                    <input name="re_password" required="" class="input repass" type="password"><span class="highlight"></span><span class="bar"></span>
+                                        <label class="label">Re-Type Password</label>
+                                </div>
+                                 <div class="group">
+                                   <p style="color: wheat;"><span><input type="checkbox" required></span>I agree to the terms and conditions of services</p>
+
+                                </div>
+
+                                <!-- Button -->
+                                <div class="control-group">
+                                  <label class="control-label" for="confirmsignup"></label>
+                                  <div class="controls">
+                                    <button type="submit" id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
+                                  </div>
+                                </div>
+                                </fieldset>
+                                </form>
+                          </div>
+                        </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <!--modal2-->
+
+                    <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form class="form-horizontal">
+                            <fieldset>
+                            <div class="group">
+                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                        <label class="label" for="date">Email address</label></div>
+
+
+                            <div class="control-group">
+                                  <label class="control-label" for="forpassword"></label>
+                                  <div class="controls">
+                                    <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Send</button>
+                                  </div>
+                                </div>
+                              </fieldset>
+                                </form>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <!--/*student-login-signup-->
+                                  <!-- Modal -->
+                    <div class="modal fade bs-modal-sm log-sign-student" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+
+                            <div class="bs-example bs-example-tabs">
+                                <ul id="myTab" class="nav nav-tabs">
+                                  <li id="tab1" class=" active tab-style login-shadow "><a href="#signinstudent" data-toggle="tab">Log In </a></li>
+                                  <li id="tab2" class=" tab-style "><a href="#signupstudent" data-toggle="tab">Sign Up </a></li>
+
+                                </ul>
+                            </div>
+                          <div class="modal-body">
+                            <div id="myTabContent" class="tab-content">
+
+                            <div class="tab-pane fade active in" id="signinteacher">
+                                <form class="form-horizontal" method="post">
+                                  {%csrf_token%}
+                                  <input name="student_login_form" value="on" style="display:none;" class="input schname" type="text">
+                                <fieldset>
+                                <!-- Sign In Form -->
+                                <!-- Text input-->
+
+                                   <div class="group">
+                    <input required="" name="user_email" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                        <label class="label" for="date">Enter your email</label></div>
+
+
+                                <!-- Password input-->
+                                <div class="group">
+                    <input required="" name="password" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                        <label class="label" for="date">Password</label>
+                        </div>
+
+
+                               <div class="forgot-link">
+                                   <a href="#forgot" data-toggle="modal" data-target="#forgot-password" style="font-size:13px; float:right"> Forgot Password? </a>
+                                </div>
+
+
+                                <!-- Button -->
+                                <div class="control-group">
+                                  <label class="control-label" for="signin"></label>
+                                  <div class="controls">
+                                    <button type="submit" id="signinstudent" name="signin" class="btn btn-primary btn-block">Log In</button>
+                                  </div>
+                                </div>
+                                </fieldset>
+                                </form>
+                            </div>
+
+
+                        <!-- STUDENT SIGN UP-->
+                         <div class="tab-pane fade" id="signupstudent">
+                                            <form class="form-horizontal" method="post">
+                                              {%csrf_token%}
+                                            <fieldset>
+                                            <!-- Sign Up Form -->
+                                            <!-- Text input-->
+                                            <input name="student_reg_form" value="on" style="display:none;" class="input schname" type="text">
+                                            <div class="group">
+                                                    <input name="school_id" required="" class="input schname" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label">School id</label>
+                                            </div>
+                                            <div class="group">
+                                                    <input name="roll_no" required="" class="input yourname" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label">Roll no.</label>
+                                            </div>
+                                            <div class="group">
+                                                    <input name="name" required="" class="input yourname" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label">Name</label>
+                                            </div>
+
+                                            <!--Email input-->
+                                            <div class="group">
+                                                    <input name="email" required="" class="input youremail" type="email"><span class="highlight"></span><span class="bar"></span>
+                                                        <label class="label">Email</label>
+                                            </div>
+
+                                    <!--contact input-->
+                                            <div class="group">
+                                                    <input name="phone" required="" class="input phone" type="number"><span class="highlight"></span><span class="bar"></span>
+                                                        <label class="label">Contact No.</label>
+                                            </div>
+
+
+                                            <!-- Password input-->
+                                            <div class="group">
+                                                <input name="password" required="" class="input pass" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label">Password</label>
+                                            </div>
+                                             <!-- Password retype input-->
+                                            <div class="group">
+                                                <input name="re_password" required="" class="input repass" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label">Re-Type Password</label>
+                                            </div>
+                                          <div >
+                                            <select style="margin-top:10px;margin-left: 125px;padding:5px;" name="Class" id="Choose-subject">
+                                              <option >Select Class</option>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                              <option value="6">6</option>
+                                              <option value="7">7</option>
+                                              <option value="8">8</option>
+                                              <option value="9">9</option>
+                                              <option value="10">10</option>
+                                              <option value="11">11</option>
+                                              <option value="12">12</option>
+                                            </select>
+                                          </div>
+                                              <div class="group">
+                                                  <p style="color: wheat;"><span><input type="checkbox" required></span>I agree to the terms and conditions of services</p>
+
+                                            </div>
+                                            <!-- Button -->
+                                            <div class="control-group">
+                                              <label class="control-label" for="confirmsignupstudent"></label>
+                                              <div class="controls">
+                                                <button id="confirmsignupstudent" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
+                                              </div>
+                                            </div>
+                                            </fieldset>
+                                            </form>
+                          </div>
+                        </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <!--modal2-->
+
+                    <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form class="form-horizontal">
+                            <fieldset>
+                            <div class="group">
+                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                        <label class="label" for="date">Email address</label></div>
+
+
+                            <div class="control-group">
+                                  <label class="control-label" for="forpassword"></label>
+                                  <div class="controls">
+                                    <button id="forpasswodrj" name="forpassword" class="btn btn-primary btn-block">Send</button>
+                                  </div>
+                                </div>
+                              </fieldset>
+                                </form>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+              </div>
+              <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+              <div class="container text-center">
+              <small>An Initiative By The Ace's</small>
+              </div>
+              </footer>
+    <script>
+               var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        function hide(){
+          $('#school_reg').slideDown();
+          $('#school_reg_btn').slideUp();
+        }
+        </script>
+    </body>
+</html>

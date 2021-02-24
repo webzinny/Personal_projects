@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+    <title>QR Code</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <link rel="stylesheet" href="{%static "style.css"%}" />
+    <script src="{% static "mainQr.js" %}"></script>
+  </head>
+
+  <body>
+
+    <div class="logo" style="padding-top: 30px;">
+      <img src="{%static "logo.png"%}" height="100" width="100">
+    </div>
+
+    <div id="container">
+      <h1>Madhya Advt.</h1>
+
+      <a id="btn-scan-qr">
+        <button id="scan-btn">Click to Scan</button>
+      </a>
+      {%if msg%}
+      <h1>{{msg}}</h1>
+      <script type="text/javascript">
+        setTimeout("window.location.assign('/')",1000)
+      </script>
+      {%endif%}
+
+      <canvas hidden="" id="qr-canvas"></canvas>
+
+      <div id="qr-result" hidden="">
+        <form method="POST">
+          {%csrf_token%}
+          <input type="text" id="inp0" placeholder="Designation"  name="input1"><br>
+          <input type="text" id="inp1" placeholder="Name" name="input2"><br>
+          <input type="text" id="inp2" placeholder="Place" name="input3"><br>
+          <input type="text" id="inp3" placeholder="Contact" name="input4"><br>
+          <select name="selectInp" id="">
+            <option value="Session1">Session1</option>
+            <option value="Session2">Session2</option>
+            <option value="Session3">Session3</option>
+            <option value="Session4">Session4</option>
+            <option value="Session5">Session5</option>
+            <option value="Session6">Session6</option>
+            <option value="Session7">Session7</option>
+            <option value="Session8">Session8</option>
+            <option value="Session9">Session9</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{%static "qr.js"%}"></script>
+  </body>
+</html>

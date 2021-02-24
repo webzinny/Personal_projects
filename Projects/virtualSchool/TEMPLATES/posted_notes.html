@@ -1,0 +1,55 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See posted Homework</title>
+    <link rel="stylesheet" href="{%static "css/postedhw.css" %}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a style="color:white;" href="#">Virtual school</a></li>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+    <br>
+    <div class="sph-container-1">
+        <div style="font-weight: bold; color: white ;background: #440044;padding: 10px;"><center><h3>{{sub}} Notes</h3></center></div>
+        <ul>
+            <li>
+              {%for i in key%}
+              <div class="bottom">{{i.name}}--{{i.date}} <a href="/media/{{i.file}}"> <button style="float:right;" type="button" class="btn btn-primary" >Download</button></a> </div>
+              {%endfor%}
+            </li>
+
+
+        </ul>
+
+    </div>
+    <br>
+    <div><center><a class="back-link" href="{%url "student/notes"%}"> <strong>back to previous page</strong></a></center></div>
+
+</body>
+</html>

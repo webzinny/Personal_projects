@@ -1,0 +1,80 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectures</title>
+    <link rel="stylesheet" href="{%static "css/circulatenotice.css"%}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="#">Virtul School</a></li>
+                <li class="item"><a href="{%url "teacher"%}">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+    <h1 style="text-align: center; margin-bottom: 4%;    text-decoration: underline;margin: 7%;text-align: center;"> Share essential Video/Document Link </h1>
+    <div class="container1">
+      <form  method="post">
+        {%csrf_token%}
+      <div class="ph-form">
+      <label for="Subject">Choose Class</label>
+      <select name="Class" id="Choose-subject">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      </div>
+
+
+      <div class="ph-form">
+      <label for="Subject">Choose a Subject :</label>
+      <select name="subject" id="Choose-subject">
+        <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Math">Math</option>
+          <option value="Science">Science</option>
+          <option value="Social science">Social science</option>
+      </select>
+      </div>
+         <textarea name="link"   placeholder="Paste link here, with short description.." style="    padding: 5px; width: 100%; height: 50px;"></textarea>
+         <button class="Sendbtn" type="submit" >Share</button>
+           </form>
+      <center>  <h5> We are working consistently to upgrade our services and trying to extend our database.
+        <br> Till then you can provide essential links here for students or you can upload your
+      video lecture on Youtube and can provide link here.<br>Thanks. </h5></center>
+       </div>
+
+</body>
+</html>

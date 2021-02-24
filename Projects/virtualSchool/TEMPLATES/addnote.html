@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Home Work</title>
+    <link rel="stylesheet" href="addhomework.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="#">The Soul of Ace's</a></li>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                </li>
+                <li class="item button"><a href="Login.html">Log In</a></li>
+                <li class="item button secondary"><a href="Signup.html">Sign Up</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+    <div action method="post" class="container">
+  
+        <h1><strong>Create Notebook</strong></h1>
+        
+        <div class="subject">
+            <label style="float: left">Choose a Subject :</label>  
+            <select name="subject">
+                <option value="Math">Maths</option>
+                <option value="Science">Science</option>
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+                <option value="SociScence">Social Science</option>
+                <option value="History">History</option>
+                <option>Geography</option>
+                <option>Economics</option>
+                <option>Civics</option>
+            </select> 
+        </div>
+
+        <div class="upload-file" >
+              
+          <input type="file" name="images" id="images" required="required"  multiple="multiple" class="choosefile" >
+          <div class="file-dummy">
+
+              <div class="default" style="font-size: 12px; padding-left: 9px; ">Please select some files</div>
+          </div>
+        </div>
+        
+        <div class="upload-img">
+            <button style="margin: 9px;padding: 3px;" >Upload images</button>
+        </div>
+
+            <button class="submit">Submit</button>
+ 
+      </div>
+      
+      
+      
+      
+      
+      
+      <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+</body>
+</html>

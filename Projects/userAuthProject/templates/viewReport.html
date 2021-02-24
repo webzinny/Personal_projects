@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="{%static "css/viewReport.css"%}">
+    <title>Reporting</title>
+</head>
+<body>
+    <div class="bg"></div>
+        <div class="main">
+            <div class="main-header">
+                <p>Dashboard</p>
+                <div class="header-btns">
+                  <button onclick="log()" type="submit">LogOut</button>
+                  <script>
+                    function log(){
+                      window.location.assign('/adm/log');
+                    }
+                  </script>
+                </div>
+            </div>
+
+            <div class="content-container">
+                <div class="card-head">
+                    <div class="card-head-content">
+                      {{rep.name}} -Report
+                    </div>
+                </div>
+                <!-- -----------Report Table------- -->
+                <div class="card">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                              {%for i in curs.column_names%}
+                                <th>{{i}}</th>
+                              {%endfor%}
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                          {%for i in curs%}
+                            <tr>
+                              {%for j in i%}
+                                <td>{{j}}</td>
+                              {%endfor%}
+                            </tr>
+                          {%endfor%}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ending here -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+            $('#example').DataTable();
+          } );
+    </script>
+</body>
+</html>

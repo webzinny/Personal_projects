@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static "css/style.css"%}">
+        <!-- <script src="main.js"></script> -->
+        <title>Home</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div style="position:relative;top:20px;" id="logo">LOGO</div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Lifestyle fair</a></li>
+                    <li><a href="#">City</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ---------start-content----------- -->
+        <div class="start-content">
+            <div class="logo-container">
+                <div class="logo"></div>
+            </div>
+        </div>
+
+        <!-- ---------choose--by-category------- -->
+       <div id="#category" class="category">
+         <div style="text-align: center;font-weight: 100;font-size: 40px;letter-spacing: 5px;margin-top:30px;">
+           <span >Choose by Category</span>
+         </div>
+         <div class="card-container">
+           <div class="card">
+               <img src="https://stage.dblifestylefair.com/uploads/category_icon/8cfe2249e1699a0f84c5a8334bfeed63_thumb.png" alt="" srcset="" height="70%" width="100%">
+               <p>Lifestyle</p>
+           </div>
+           <div class="card">
+               <img src="https://stage.dblifestylefair.com/uploads/category_icon/b514731d692d0b5951977b4f9ad03198_thumb.png" alt="" srcset=""  height="70%" width="100%">
+               <p>Jwellery</p>
+           </div>
+           <div class="card">
+               <img src="https://stage.dblifestylefair.com/uploads/category_icon/73cc82a4a173d593837412f5cd9ed9a3_thumb.png" alt="" srcset=""  height="70%" width="100%">
+               <p>Home Furnishing</p>
+           </div>
+           {%if data%}
+           {%for i in data%}
+           <div class="card">
+               <img src="media/{{i.img}}" alt="" srcset=""  height="70%" width="100%">
+               <p>{{i.tag}}</p>
+           </div>
+           {%endfor%}
+           {%endif%}
+         </div>
+       </div>
+
+        <!-- ---------choose--by-store------- -->
+        <div class="choose-store">
+            <h1 style="position: absolute; top: 300px;font-weight: 100;letter-spacing: 5px;">Choose by Store</h1>
+        </div>
+
+        <!--  copy right     -->
+        <div id="copyright">
+            <p>Copyright © 2020 Dainik Bhaskar Group</p>
+            </p >All Rights Reserved</p>
+        </div>
+
+        <!-- total visitor  -->
+        <div class="total-visitor">
+            <div class="visitor-content">
+                <p>Total unique visitor:</p>
+                <p style="margin-left: 30%;">10000</p>
+            </div>
+            <div class="visitor-content">
+                <p>Total registrations/Sign Ups:</p>
+                <p style="margin-left: 30%;">5000</p>
+            </div>
+            <div class="visitor-content">
+                <p>Offers Claimed:</p>
+                <p style="margin-left: 30%;">25000</p>
+            </div>
+        </div>
+
+    </body>
+</html>

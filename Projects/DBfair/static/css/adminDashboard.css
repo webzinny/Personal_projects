@@ -1,0 +1,100 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    margin: 0;
+    height: 60px;
+    background-color: #45779e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#content{
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+}
+.container{
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+.sidebar{
+    display: flex;
+    flex-flow: column;
+    width: 180px;
+    padding-top: 90px;
+    background-color:#032429;
+    height: 100%;
+}
+.sidebar a{
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar .active{
+    background-color: teal;
+}
+.sidebar button:hover{
+    background-color: rgb(24, 53, 53);
+}
+.sidebar button{
+    border: none;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    padding: 20px;
+    text-align: center;
+    background-color: #032429;
+}
+
+/* mainframe */
+.mainframe{
+    display: flex;
+    height: 100%;
+    background-color: whitesmoke;
+    flex-flow: column;
+    flex-basis: 100%;
+    align-items: center;
+}
+#dashboard{
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#dashboard h1{
+    font-weight: 100;
+}
+#pushcontents{
+  display: none;
+  padding: 10px;
+  overflow-x: auto;
+}
+#pushcontents form{
+  margin-left: 30px;
+}
+
+#pushcontents input{
+  padding: 5px 30px;
+  margin: 5px;
+}
+#pushcontents form button{
+  margin-left: 30px;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+#pushcontents table{
+  margin: 30px 20px 30px 10px;
+}
+table, th, td{
+  border: 1px solid black;
+  padding: 10px 5px;
+}
+#pushcontents img{
+  height: 10%;
+  width: 20%;
+}

@@ -1,0 +1,91 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture</title>
+    <link rel="stylesheet" href="{%static "css/VideoLecture.css" %}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="#">Virtual School</a></li>
+                <li class="item"><a href="{%url "student"%}">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </main>
+     <div class="container">
+        <div class="english">
+            <h1 style="text-decoration-line: underline;">English Lectures</h1>
+            <ul class="units">
+               {%for i in key%}
+                <li>
+                    <a href="">{{i.link}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="hindi">
+            <h1 style="text-decoration-line: underline;">Hindi Lectures</h1>
+            <ul class="units">
+               {%for i in key1 %}
+                <li>
+                    <a href="">{{i.link}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+
+        <div class="maths">
+            <h1 style="text-decoration-line: underline;">Maths Lectures</h1>
+            <ul class="units">
+               {%for i in key2 %}
+                <li>
+                    <a href="">{{i.link}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="science">
+            <h1 style="text-decoration-line: underline;">Science Lectures</h1>
+            <ul class="units">
+               {%for i in key3 %}
+                <li>
+                    <a href="">{{i.link}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="social">
+            <h1 style="text-decoration-line: underline;">Social Lectures</h1>
+            <ul class="units">
+               {%for i in key4 %}
+                <li>
+                    <a href="">{{i.link}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
